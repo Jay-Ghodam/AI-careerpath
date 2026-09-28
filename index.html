@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>AI CareerPath — Your Future, Mapped by AI</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="app">
+  <aside class="sidebar">
+    <div class="brand">
+      <img src="logo.png">
+      <div><b>AI CareerPath</b><small>STRATEGY • FORESIGHT • ADVANCEMENT</small></div>
+    </div>
+    <div class="profile-mini">
+      <div class="avatar" id="avatar">J</div>
+      <div><b id="sideName">Student</b><small>Career Explorer</small></div>
+    </div>
+    <nav>
+      <button class="nav active" data-page="dashboard"><span>⌂</span> Overview</button>
+      <button class="nav" data-page="assessment"><span>◈</span> Career Assessment</button>
+      <button class="nav" data-page="careers"><span>◎</span> Career Explorer</button>
+      <button class="nav" data-page="learning"><span>▣</span> Learning Path</button>
+      <button class="nav" data-page="internships"><span>↗</span> Internships</button>
+      <button class="nav" data-page="assistant"><span>✦</span> AI Assistant</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <div class="tip"><span>✦</span><div><b>Career tip</b><small>Small skills today create bigger opportunities tomorrow.</small></div></div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <header class="topbar">
+      <div class="mobile-brand"><img src="logo.png"><b>AI CareerPath</b></div>
+      <div class="crumb" id="pageTitle">Overview</div>
+      <div class="top-actions"><button class="icon-btn">⌕</button><button class="icon-btn">◔</button><div class="top-avatar">J</div></div>
+    </header>
+
+    <section class="page active" id="dashboard">
+      <div class="welcome">
+        <div><span class="eyebrow">YOUR CAREER COMMAND CENTER</span><h1>Build a career that fits <span>you.</span></h1><p>AI CareerPath connects your interests, skills, academics and goals to practical next steps.</p></div>
+        <button class="primary" onclick="openPage('assessment')">Update my assessment <span>→</span></button>
+      </div>
+
+      <div class="hero-dashboard">
+        <div class="hero-left">
+          <div class="ai-pill">✦ AI CAREER INSIGHT</div>
+          <h2 id="dashCareer">Discover your strongest career match</h2>
+          <p id="dashReason">Complete your assessment to unlock a personalized career direction, skill gap and learning roadmap.</p>
+          <button class="white-btn" onclick="openPage('assessment')">Start assessment <span>→</span></button>
+        </div>
+        <div class="match-circle"><div><b id="dashMatch">--</b><small>match</small></div></div>
+      </div>
+
+      <div class="section-head"><div><span class="eyebrow">AT A GLANCE</span><h2>Your career profile</h2></div><button class="link-btn" onclick="openPage('careers')">Explore careers →</button></div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="stat-icon teal">◎</div><div><small>Top Career</small><b id="statCareer">Not assessed</b><span>AI recommended</span></div></div>
+        <div class="stat-card"><div class="stat-icon blue">◈</div><div><small>Profile Fit</small><b id="statFit">--</b><span>Based on your inputs</span></div></div>
+        <div class="stat-card"><div class="stat-icon purple">▣</div><div><small>Skill Progress</small><b id="statSkills">0%</b><span>Keep building</span></div></div>
+        <div class="stat-card"><div class="stat-icon orange">↗</div><div><small>Next Action</small><b id="statAction">Assessment</b><span>Your next step</span></div></div>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="panel">
+          <div class="panel-head"><div><span class="eyebrow">RECOMMENDED</span><h3>Career matches</h3></div><button class="link-btn" onclick="openPage('careers')">View all</button></div>
+          <div id="dashCareers" class="career-list"><div class="empty-state">Complete your assessment to see career matches.</div></div>
+        </div>
+        <div class="panel">
+          <div class="panel-head"><div><span class="eyebrow">YOUR JOURNEY</span><h3>Career roadmap</h3></div><button class="link-btn" onclick="openPage('learning')">Open</button></div>
+          <div class="timeline">
+            <div class="timeline-item done"><i>✓</i><div><b>Discover</b><small>Understand your profile</small></div></div>
+            <div class="timeline-item current"><i>2</i><div><b>Build skills</b><small>Close your career skill gaps</small></div></div>
+            <div class="timeline-item"><i>3</i><div><b>Build projects</b><small>Show what you can do</small></div></div>
+            <div class="timeline-item"><i>4</i><div><b>Get experience</b><small>Find internships & opportunities</small></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="assessment">
+      <div class="center-head"><span class="eyebrow">PERSONALIZED ASSESSMENT</span><h1>Let's understand your <span>career direction.</span></h1><p>There is no right or wrong answer. Your responses simply help us understand what fits you.</p></div>
+      <div class="steps"><span class="on">1</span><i></i><span>2</span><i></i><span>3</span></div>
+      <div class="assessment-card">
+        <div class="question-block" id="step1">
+          <span class="question-no">01 / 03</span><h2>What are you naturally interested in?</h2><p>Select the areas you enjoy most.</p>
+          <div class="option-grid" id="interestOptions">
+            <button data-v="coding">💻 Coding & Technology</button><button data-v="ai">🤖 AI & Innovation</button><button data-v="data">📊 Data & Analytics</button><button data-v="design">🎨 Design & Creativity</button><button data-v="business">💼 Business & Entrepreneurship</button><button data-v="cyber">🔐 Cybersecurity</button><button data-v="communication">🎤 Communication</button><button data-v="research">🔬 Research</button>
+          </div><button class="primary next" onclick="nextStep(2)">Continue →</button>
+        </div>
+        <div class="question-block hidden" id="step2">
+          <span class="question-no">02 / 03</span><h2>What skills do you already have?</h2><p>Choose skills you can confidently use today.</p>
+          <div class="option-grid" id="skillOptions">
+            <button data-v="python">Python</button><button data-v="cpp">C / C++</button><button data-v="web">Web Development</button><button data-v="sql">SQL</button><button data-v="ml">Machine Learning</button><button data-v="communication">Communication</button><button data-v="problem">Problem Solving</button><button data-v="leadership">Leadership</button>
+          </div><button class="primary next" onclick="nextStep(3)">Continue →</button>
+        </div>
+        <div class="question-block hidden" id="step3">
+          <span class="question-no">03 / 03</span><h2>Where do you want your career to go?</h2><p>Tell us what matters most right now.</p>
+          <div class="goal-options" id="goalOptions"><button data-v="job"><b>🚀 Get a job</b><small>Build industry-ready skills</small></button><button data-v="startup"><b>💡 Build a startup</b><small>Create and lead something new</small></button><button data-v="higher"><b>🎓 Higher studies</b><small>Prepare for advanced education</small></button><button data-v="explore"><b>🧭 Explore options</b><small>Understand what fits me</small></button></div>
+          <div class="profile-fields"><input id="studentName" placeholder="Your name"><select id="branch"><option value="">Select your branch</option><option>Computer Engineering</option><option>Information Technology</option><option>Electronics & Telecommunication</option><option>Mechanical Engineering</option><option>Other</option></select><select id="marks"><option value="">Academic performance</option><option value="high">80% and above</option><option value="medium">60% – 79%</option><option value="developing">Below 60%</option></select></div>
+          <button class="primary next" onclick="finishAssessment()">Generate my AI career profile ✦</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="careers">
+      <div class="center-head"><span class="eyebrow">CAREER EXPLORER</span><h1>Explore where your <span>skills can take you.</span></h1><p>Compare career directions, understand requirements and see what to learn next.</p></div>
+      <div class="filter-row"><button class="filter active">All careers</button><button class="filter">Technology</button><button class="filter">Data</button><button class="filter">Creative</button><button class="filter">Business</button></div>
+      <div class="career-explorer-grid" id="careerExplorer"></div>
+    </section>
+
+    <section class="page" id="learning">
+      <div class="center-head"><span class="eyebrow">LEARNING PATH</span><h1>Turn your skill gaps into a <span>roadmap.</span></h1><p>Your learning plan should lead somewhere — every skill connects to a career outcome.</p></div>
+      <div class="learning-layout">
+        <div class="panel progress-panel"><div class="panel-head"><div><span class="eyebrow">CURRENT PROGRESS</span><h3 id="learningCareer">Career assessment required</h3></div><b class="big-progress" id="learningPercent">0%</b></div><div class="progress-line"><i id="learningBar"></i></div><div class="skill-progress"><div><span>Foundation</span><b>Completed</b></div><div><span>Core skills</span><b>In progress</b></div><div><span>Projects</span><b>Not started</b></div><div><span>Internship</span><b>Next</b></div></div></div>
+        <div class="panel"><div class="panel-head"><div><span class="eyebrow">RECOMMENDED</span><h3>Learning sequence</h3></div></div><div class="course-list" id="courseList"></div></div>
+      </div>
+    </section>
+
+    <section class="page" id="internships">
+      <div class="center-head"><span class="eyebrow">OPPORTUNITY MATCHING</span><h1>Get ready for your <span>first opportunity.</span></h1><p>Use your target career and skill gaps to prepare for internships.</p></div>
+      <div class="internship-banner"><div><span class="ai-pill">✦ AI MATCHING</span><h2 id="internshipTitle">Complete your assessment to unlock recommendations.</h2><p id="internshipText">We'll suggest roles to target and the skills to prepare.</p></div><div class="brief-score"><b id="internshipScore">--</b><small>readiness</small></div></div>
+      <div class="opportunity-grid">
+        <div class="opportunity"><span class="role-icon">AI</span><div><b>AI / ML Intern</b><p>Python • ML • Projects</p><small>Prepare with 2 portfolio projects</small></div><button>Prepare →</button></div>
+        <div class="opportunity"><span class="role-icon blue">SD</span><div><b>Software Developer Intern</b><p>DSA • Git • Development</p><small>Strengthen coding fundamentals</small></div><button>Prepare →</button></div>
+        <div class="opportunity"><span class="role-icon purple">DA</span><div><b>Data Analyst Intern</b><p>SQL • Excel • Visualization</p><small>Build one analytics case study</small></div><button>Prepare →</button></div>
+      </div>
+    </section>
+
+    <section class="page" id="assistant">
+      <div class="center-head"><span class="eyebrow">AI CAREER ASSISTANT</span><h1>Ask. Explore. <span>Move forward.</span></h1><p>Your career questions, explained in a practical way.</p></div>
+      <div class="chat-box">
+        <div class="chat-head"><div class="assistant-avatar">✦</div><div><b>CareerPath AI</b><small>Personal career companion</small></div><span class="online">● Online</span></div>
+        <div class="messages" id="messages"><div class="msg bot"><b>CareerPath AI</b><p>Hi! 👋 I can help you understand career options, skills, courses, projects and internships. What would you like to explore?</p></div></div>
+        <div class="quick"><button onclick="ask('What career suits my profile?')">What career suits me?</button><button onclick="ask('What should I learn next?')">What should I learn next?</button><button onclick="ask('How do I get an internship?')">How do I get an internship?</button></div>
+        <div class="chat-input"><input id="chatInput" placeholder="Ask your career question..."><button onclick="sendChat()">↑</button></div>
+      </div>
+    </section>
+  </main>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
